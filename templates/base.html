@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>RestFull</title>
+        <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
+        <style>
+            body {
+                padding-top: 20px;
+            }
+        </style>
+        <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="{{STATIC_URL}}bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        {% block extrahead %}
+        {% endblock %}
+        <script type="text/javascript">
+        $(function(){
+        {% block jquery %}
+        {% endblock %}
+        });
+        </script>
+    </head>
+<body>
+
+<div >
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/task/">All Tasks</a></li>
+                <li><a href="/match_results/"> All Match results </a></li>
+                <li><a href="/football_teams/"> All Football Teams </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</div>
+
+<div class="container">
+     {% block content %}BASE TEMPLATE{% endblock %}
+</div>
+
+</body>
+</html>

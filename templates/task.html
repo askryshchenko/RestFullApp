@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<h1>Task {{ task.task_id }} result:</h1>
+<h3>For Team {{ team.name }}</h3>
+<img src="{{ team.img.url }}">
+<h4>From {{ task.start_date }} to {{ task.end_date }}</h4>
+<div class="match_results">
+    <ul>
+    {% for match_result in match_results %}
+
+                <li>
+                    <p>{{ match_result.home_team.name }} - {{ match_result.guest_team.name }} {{ match_result.home_team_scored }} : {{ match_result.guest_team_scored }}</p>
+
+                </li>
+
+    {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}

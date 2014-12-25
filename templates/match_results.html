@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<h1>Results of all matches:</h1>
+<div class="match_results">
+    <ul>
+    {% for match_result in queryset %}
+
+                <li>
+                    <p>{{ match_result.home_team.name }} - {{ match_result.guest_team.name }} {{ match_result.home_team_scored }} : {{ match_result.guest_team_scored }}</p>
+
+                </li>
+
+    {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}

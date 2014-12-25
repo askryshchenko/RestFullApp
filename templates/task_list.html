@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>All Task:</h1>
+<div class="all_task">
+    <ul>
+    {% for task in queryset %}
+
+                <li>
+                    <p>Task {{task.task_id}} match results for team {{task.team}} from {{ task.start_date }} to {{ task.end_date }}</p>
+
+                </li>
+
+    {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}

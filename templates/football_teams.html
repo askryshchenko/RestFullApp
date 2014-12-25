@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>All football teams:</h1>
+<div class="football_teams">
+    <ul>
+    {% for team in queryset %}
+
+                <li>
+                    <p>{{ team.name }} from city {{ team.city }}, {{ team.country }}</p>
+                    <img src="{{ team.img.url }}">
+                </li>
+
+    {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}
